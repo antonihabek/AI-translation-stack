@@ -1,0 +1,21 @@
+{
+  "sourceLocale": "en",
+  "locales": [
+    { "code": "de", "name": "German", "nativeName": "Deutsch" },
+    { "code": "fr", "name": "French", "nativeName": "Français" }
+  ],
+  "messagesDir": "messages",
+  "sourceSnapshotFile": ".en-source-snapshot.json",
+  "translationMemoryFile": ".translation-memory.json",
+  "semanticMemoryFile": ".semantic-memory.json",
+  "confirmedSameFile": ".confirmed-same.json",
+  "glossaryFile": "translation-glossary.json",
+  "provenanceFile": ".provenance.json",
+  "sourceScanRoots": ["source"],
+  "sourceScanBaselineFile": "i18n-scan-baseline.json",
+  "reservedMetadataKeys": [],
+  "excludedKeyPrefixes": [],
+  "chunkSize": 2,
+  "translationModel": "gpt-5.6-luna",
+  "embeddingModel": "text-embedding-3-small"
+}

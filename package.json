@@ -1,0 +1,57 @@
+{
+  "name": "ai-translation-stack",
+  "version": "0.1.0",
+  "description": "A provider-agnostic AI translation stack for catalog synchronization, validation, memory, and next-intl integration.",
+  "license": "Apache-2.0",
+  "private": false,
+  "type": "module",
+  "engines": {
+    "node": ">=22.17.0"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./next-intl": {
+      "types": "./dist/adapters/next-intl.d.ts",
+      "import": "./dist/adapters/next-intl.js"
+    }
+  },
+  "bin": {
+    "ai-translation-stack": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "npm run typecheck && node ./node_modules/@typescript/native/bin/tsc -p tsconfig.build.json",
+    "typecheck": "node ./node_modules/@typescript/native/bin/tsc --noEmit -p tsconfig.json",
+    "lint": "node scripts/lint.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "catalog:audit": "node ./dist/cli.js audit",
+    "catalog:sync": "node ./dist/cli.js sync",
+    "catalog:baseline": "node ./dist/cli.js baseline",
+    "source:scan": "node ./dist/cli.js scan",
+    "translate": "node ./dist/cli.js translate",
+    "package:check": "npm pack --dry-run",
+    "secret:scan": "node scripts/secret-scan.mjs"
+  },
+  "peerDependencies": {
+    "next-intl": ">=4.14.2"
+  },
+  "devDependencies": {
+    "@types/node": "26.5.0",
+    "next-intl": "4.14.2",
+    "prettier": "3.8.1",
+    "typescript": "7.0.2",
+    "@typescript/native": "npm:typescript@7.0.2",
+    "vitest": "5.0.0"
+  }
+}

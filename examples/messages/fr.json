@@ -1,0 +1,7 @@
+{
+  "welcome_title": "Bienvenue, {name} !",
+  "save_button": "Enregistrer",
+  "items_count": "Vous avez {count, plural, one {# élément} other {# éléments}}.",
+  "formatted_link": "Lisez <strong>le guide</strong>.",
+  "currency_code": "USD"
+}

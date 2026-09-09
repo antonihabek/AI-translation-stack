@@ -1,0 +1,22 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+
+# Runtime translation data: keep source catalogs, never commit provider traces or memory caches.
+**/.translation-memory.json
+**/.semantic-memory.json
+**/.semantic-memory.vectors.bin
+**/.confirmed-same.json
+**/.provenance.json
+translation-data/.en-source-snapshot.json
+**/.*.tmp
+
+# Local reports
+npm-debug.log*

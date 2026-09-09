@@ -1,0 +1,7 @@
+{
+  "welcome_title": "Welcome, {name}!",
+  "save_button": "Save",
+  "items_count": "You have {count, plural, one {# item} other {# items}}.",
+  "formatted_link": "Read <strong>the guide</strong>.",
+  "currency_code": "USD"
+}
