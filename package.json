@@ -24,9 +24,7 @@
       "import": "./dist/adapters/next-intl.js"
     }
   },
-  "bin": {
-    "ai-translation-stack": "./dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "scripts": {
     "build": "npm run typecheck && node ./node_modules/@typescript/native/bin/tsc -p tsconfig.build.json",
     "typecheck": "node ./node_modules/@typescript/native/bin/tsc --noEmit -p tsconfig.json",
