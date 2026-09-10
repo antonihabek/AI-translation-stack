@@ -4,40 +4,6 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Node.js 22+](https://img.shields.io/badge/node.js-22%2B-339933.svg)](https://nodejs.org/)
 
-A provider-agnostic, TypeScript-first translation stack for teams that need reliable catalog synchronization, safe AI translation, reusable terminology, and deterministic validation.
-
-> **Project status:** early public release. The catalog and validation core is usable locally and in CI. Provider calls are deliberately opt-in and require an explicit API key.
-
-## GitHub About metadata
-
-Use this concise repository description:
-
-> Provider-agnostic AI translation stack for catalog sync, stale-source invalidation, atomic checkpoints, glossary-aware memory, validation, and next-intl integration.
-
-Suggested topics:
-
-`ai-translation` · `i18n` · `localization` · `translation-memory` · `glossary` · `next-intl` · `typescript` · `nodejs` · `catalog-management` · `semantic-search` · `developer-tools` · `apache-2-0`
-
-The project is independently maintained and is **not** an Apache Software Foundation project. “Apache-2.0” refers to the software license only.
-
-## Why this exists
-
-Translation automation is easy to start and difficult to operate safely. A script that sends a JSON object to a model does not, by itself, protect placeholders, HTML tags, stale translations, terminology, partial progress, or the source repository.
-
-AI Translation Stack treats translation as a controlled data pipeline:
-
-- **One source of truth:** the source catalog defines keys, source values, and the configured target locale set.
-- **Loud synchronization:** audit reports missing, empty, extra, mistyped, and stale values instead of silently accepting drift.
-- **Safe checkpoints:** catalog, memory, glossary, provenance, and vector files use atomic writes with bounded retry handling for transient filesystem contention.
-- **Structural validation:** translated values must retain the source placeholders and HTML tag counts while allowing legitimate ICU plural restructuring.
-- **Terminology control:** curated glossary entries are supplied to the provider; forbidden and preferred terms are checked before a value is written.
-- **Translation memory:** exact matches are reused only when source text, locale, context, and glossary version all match.
-- **Semantic memory:** optional normalized float32 embeddings retrieve approved, similar examples without placing vectors in a large JSON document.
-- **Provider isolation:** the core does not require a network call. The included provider adapters are replaceable through a small provider interface.
-- **Framework integration:** the optional `next-intl` adapter merges non-empty translations over the source catalog and falls back to the source locale for missing values.
-
-The documentation follows the practical structure expected by maintainers evaluating an open-source component: what it is, why it exists, how to run it, when it is appropriate, who controls the data boundary, and how contributions are verified.
-
 ## What is included
 
 | Layer                 | Responsibility                                                                                                     |
