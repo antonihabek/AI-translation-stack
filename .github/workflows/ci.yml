@@ -16,38 +16,43 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12.6.0
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.17.0'
-          cache: npm
+          node-version: '24.21.0'
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Check formatting
-        run: npm run format:check
+        run: pnpm format:check
 
       - name: Typecheck
-        run: npm run typecheck
+        run: pnpm typecheck
 
       - name: Lint
-        run: npm run lint
+        run: pnpm lint
 
       - name: Run tests
-        run: npm test
+        run: pnpm test
 
       - name: Build package
-        run: npm run build
+        run: pnpm build
 
       - name: Audit example catalogs
-        run: npm run catalog:audit -- --config examples/translation.config.json
+        run: pnpm catalog:audit -- --config examples/translation.config.json
 
       - name: Check source scan ratchet
-        run: npm run source:scan -- --config examples/translation.config.json --check
+        run: pnpm source:scan -- --config examples/translation.config.json --check
 
       - name: Scan for secrets
-        run: npm run secret:scan
+        run: pnpm secret:scan
 
       - name: Inspect package contents
-        run: npm run package:check
+        run: pnpm package:check

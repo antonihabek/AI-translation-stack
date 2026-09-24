@@ -2,7 +2,7 @@
 
 [![CI](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-[![Node.js 22+](https://img.shields.io/badge/node.js-22%2B-339933.svg)](https://nodejs.org/)
+[![Node.js 24.21.0](https://img.shields.io/badge/node.js-24.21.0-339933.svg)](https://nodejs.org/)
 
 ## What is included
 
@@ -48,7 +48,7 @@ The core is intentionally independent of a web framework. It reads and writes ca
 
 ## Requirements
 
-- Node.js 22.17 or newer
+- Node.js 24.21.0 or newer
 - npm with lockfile support
 - TypeScript 7 native compiler is used by the checked-in typecheck command
 - An API key is required only for `translate`
@@ -222,7 +222,7 @@ npm run secret:scan
 npm run package:check
 ```
 
-GitHub Actions runs the same categories on Node.js 22.17. The tests use temporary directories and mocked providers; they never insert state directly into an external database and never require a network credential.
+GitHub Actions runs the same categories on Node.js 24.21.0. The tests use temporary directories and mocked providers; they never insert state directly into an external database and never require a network credential.
 
 The source scanner is intentionally heuristic. It is a review ratchet, not an AST proof that every string is localized. Treat additions as a code-review decision and keep the baseline small and current.
 
